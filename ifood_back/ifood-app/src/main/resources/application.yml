@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ifood
+    username: postgres
+    password: ifood123
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+external:
+  api:
+    url: https://jsonplaceholder.typicode.com/photos
