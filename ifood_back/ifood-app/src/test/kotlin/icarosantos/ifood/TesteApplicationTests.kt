@@ -1,10 +1,10 @@
-package com.example.demo
+package icarosantos.ifood
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class IfoodrestfullApplicationTests {
+class TesteApplicationTests {
 
 	@Test
 	fun contextLoads() {
