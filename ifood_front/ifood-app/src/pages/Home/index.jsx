@@ -1,4 +1,4 @@
-import Empashis from "../../components/emphasis";
+import Empashis from "../../components/Emphasis";
 
 function Main() {
     return (
