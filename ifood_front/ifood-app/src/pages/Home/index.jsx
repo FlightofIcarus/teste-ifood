@@ -1,10 +1,10 @@
 import Empashis from "../../components/emphasis";
 
-function Main({list}) {
+function Main() {
     return (
-        <main className="bg-red-400 md:container md:mx-auto h-4/6 flex flex-col items-center justify-center">
-            <p>Aqui fica o main</p>
-            <Empashis list={list} />
+        <main className="bg-ifood bg-no-repeat bg-cover bg-center md:container md:mx-auto flex flex-col items-center justify-center">
+            
+            <Empashis />
         </main>
     )
 }

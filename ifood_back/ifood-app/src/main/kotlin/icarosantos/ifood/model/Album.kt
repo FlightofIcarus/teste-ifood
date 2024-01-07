@@ -1,4 +1,4 @@
-package icarosantos.ifood.model
+package ifood.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.persistence.Entity

@@ -1,4 +1,3 @@
-import './App.css'
 import RoutesApp from "./routes"
 
 
@@ -6,7 +5,7 @@ import RoutesApp from "./routes"
 function App() {
 
     return (
-      <div className='border-cian-300 border-2 h-screen max-h-screen'>
+      <div className="h-dvh">
         <RoutesApp />
       </div>
   )

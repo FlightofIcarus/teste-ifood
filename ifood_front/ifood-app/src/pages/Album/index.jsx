@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
+import loadEndPoint from "../../assets/FetchFunction";
+import {Link} from "react-router-dom"
 
-    
+// let apireturn = await loadEndPoint('/api/albums');
+
 
 
 export default function AlbumList(){
 
-    const [albumlist, setAlbumlist] = useState([]);
+    const apireturn = loadEndPoint('/api/albums');
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/photos').then((resp) => resp.json()).then((data) => {setAlbumlist(data)}).catch((err) => {console.error(err)})}, [])
+    let responseJson = apireturn;
 
-    
+   const [albuns, setalbuns] = useState([]);
+
+   useEffect(()=>{setalbuns(responseJson)}, [apireturn])
+
     return(
-    <ul className="px-8 flex flex-row flex-wrap">
-        {albumlist.map((album) => { if(album.albumId == 1) {return (<li className="px-4 py-4" key={album.id}><img src={album.thumbnailUrl} /></li>)}})}
-    </ul>
+        <main>
+            <ul className="px-8 flex flex-row items-center justify-center flex-wrap">
+                {apireturn.map((album) => { return (
+                    <Link to={`/album/${album.albumId}`} key={album.albumId}><li className="bg-red-700 hover:bg-red-300 font-mono hover:text-black hover:font-bold p-2 mx-4 text-white" key={album.albumId}>
+                        {`Album nº ${album.albumId}`}
+                    </li></Link>)})}
+            </ul>
+        </main>
     )
 }
+
+  

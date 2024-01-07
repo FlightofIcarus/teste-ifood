@@ -1,6 +1,6 @@
-package icarosantos.ifood.repository
+package ifood.repository
 
-import icarosantos.ifood.model.Album
+import ifood.model.Album
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface AlbumRepository:JpaRepository<Album, Int> {

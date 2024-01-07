@@ -1,22 +1,22 @@
-package icarosantos.ifood.controller
+package ifood.controller
 
-import icarosantos.ifood.model.Album
-import icarosantos.ifood.repository.AlbumRepository
+import ifood.model.Album
+import ifood.repository.AlbumRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/albums")
+@RequestMapping("/api")
 class Albumcontroler (private val repository: AlbumRepository) {
 
-    @GetMapping
+    @GetMapping("/albums")
     fun listalbums(): List<Album> {
         return repository.findAll()
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/album/{id}")
     fun showalbum(@PathVariable id: Int): Album {
         return repository.getReferenceById(id)
     }

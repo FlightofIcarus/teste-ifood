@@ -1,6 +1,6 @@
-package icarosantos.ifood.repository
+package ifood.repository
 
-import icarosantos.ifood.model.Image
+import ifood.model.Image
 import org.springframework.data.jpa.repository.JpaRepository
 
 

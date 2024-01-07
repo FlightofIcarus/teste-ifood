@@ -1,10 +1,10 @@
-package icarosantos.ifood.controller
+package ifood.controller
 
-import icarosantos.ifood.model.Album
-import icarosantos.ifood.model.ExternalData
-import icarosantos.ifood.model.Image
-import icarosantos.ifood.repository.AlbumRepository
-import icarosantos.ifood.repository.ImageRepository
+import ifood.model.Album
+import ifood.model.ExternalData
+import ifood.model.Image
+import ifood.repository.AlbumRepository
+import ifood.repository.ImageRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping

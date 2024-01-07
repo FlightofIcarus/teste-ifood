@@ -1,10 +1,11 @@
-export default function empashis ({list}){
+export default function empashis (){
     
-    let listajson = list;
-    // console.log(listajson);
+      
+
     return (
-        <section>
+        <section className="border-0 border-transparent">
             
-            <img src="https://via.placeholder.com/150/92c952" alt="imagem" />
+            <p className="w-2/6 mx-auto text-2xl backdrop-blur-md bg-redbg/50 p-16">Projeto de teste técnico para posição de desenvolvedor fullstack. A aplicação conciste em: Kotlin com Spring no backend, React no frontend. Consumo de dados de API externa, persistência em banco relacional PostgreSQL. Endpoints RESTful para álbuns e fotos.</p>
+
         </section>);
 }

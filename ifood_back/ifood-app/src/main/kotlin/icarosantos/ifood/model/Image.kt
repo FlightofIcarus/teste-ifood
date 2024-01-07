@@ -1,4 +1,4 @@
-package icarosantos.ifood.model
+package ifood.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
