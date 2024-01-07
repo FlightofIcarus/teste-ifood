@@ -1,0 +1,44 @@
+version: "v2.23.3-desktop.2"
+services:
+  relationaldb:
+    image: postgres:16.1
+    container_name: postgres-container
+    environment:
+      POSTGRES_PASSWORD: ifood123
+    volumes:
+      - ./ifood_db:/var/lib/postgresql/data
+    restart: always
+  restapi:
+    image: xldevops/jdk17-lts
+    container_name: api-container
+    volumes:
+      - ./ifood_back/ifood-app/target/:/app
+    command: ["java", "-jar", "/app/ifood-0.0.1-SNAPSHOT.jar"]
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - relationaldb
+  reactfront:
+    image: node:18-alpine3.18
+    container_name: react-container
+    working_dir: /app
+    volumes:
+      - ./ifood_front/ifood-app:/app
+    command: ["sh", "-c", "npm install && npm run dev"]
+    ports:
+      - "5173:5173"
+    restart: always
+    depends_on:
+      - restapi
+  nginx:
+    image: nginx:latest
+    container_name: nginx-container
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - restapi
+      - reactfront
+      
